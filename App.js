@@ -1,9 +1,10 @@
 import React from 'react';
 import {StyleSheet, Text, Button, View} from 'react-native';
-import SendSMS, {send} from 'react-native-sms';
+import SendSMS from 'react-native-sms';
 
 const App = () => {
   const sendMsg = () => {
+    console.log('msg');
     SendSMS.send(
       {
         //Message body
@@ -12,6 +13,7 @@ const App = () => {
         recipients: ['01035855166'],
         //An array of types that would trigger a "completed" response when using android
         successTypes: ['sent', 'queued'],
+        allowAndroidSendWithoutReadPermission: true,
       },
       (completed, cancelled, error) => {
         if (completed) {
