@@ -14,16 +14,19 @@ import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
 
+    /*
   protected List<ReactPackage> getPackages() {
 	//some variables
 
+
+    \
 	  return Arrays.<ReactPackage>asList(
 		//probably some items like `new BlahPackage(),`
 		//just add into the list (don't forget commas!):
 		  SendSMSPackage.getInstance()
-	  );
+	  );s
   }
-  
+  */
 
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {

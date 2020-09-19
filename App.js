@@ -1,40 +1,59 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {StyleSheet, Text, Button, View} from 'react-native';
-import SendSMS from 'react-native-sms';
+import {View, Text, Button} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
+function HomeScreen({navigation}) {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      />
+    </View>
+  );
+}
+
+function DetailsScreen({navigation}) {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Details Screen</Text>
+      <Button
+        title="Go to Details... again"
+        onPress={() => navigation.push('Details')}
+      />
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
+    </View>
+  );
+}
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+export default App;
+
+/*
 const App = () => {
-  const sendMsg = () => {
-    console.log('msg');
-    SendSMS.send(
-      {
-        //Message body
-        body: 'testing send message',
-        //Recipients Number
-        recipients: ['01035855166'],
-        //An array of types that would trigger a "completed" response when using android
-        successTypes: ['sent', 'queued'],
-        allowAndroidSendWithoutReadPermission: true,
-      },
-      (completed, cancelled, error) => {
-        if (completed) {
-          console.log('SMS Sent Completed');
-        } else if (cancelled) {
-          console.log('SMS Sent Cancelled');
-        } else if (error) {
-          console.log('Some error occured');
-        }
-      },
-    );
-  };
+  console.log('test');
 
   return (
     <View>
-      <Text>testing!..</Text>
-      <Button title="send Msg" onPress={sendMsg.bind(this)} />
+      <Text>test..!</Text>
     </View>
   );
 };
 
 export default App;
-
-const styles = StyleSheet.create({});
+*/
