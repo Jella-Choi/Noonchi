@@ -85,7 +85,7 @@ class confirmView extends Component {
         </View>
         <TouchableOpacity
           style={styles.msgBtn}
-          onPress={() => this.props.navigation.navigate('Msg')}>
+          onPress={() => this.props.navigation.navigate('본인 인증')}>
           <Text
             style={{
               color: 'white',
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     height: 40,
     marginTop: 20,
     margin: 10,
-    borderRadius: 10,
+    borderRadius: 2,
     backgroundColor: 'purple',
   },
 });

@@ -10,11 +10,11 @@ class mapView extends Component {
       <View style={styles.screen}>
         <Block flex style={styles.map}>
           <TouchableOpacity
-            activeOpacity={0.8}
+            activeOpacity={0.5}
             style={styles.qrbtn}
-            onPress={() =>
-              this.props.navigation.navigate('Confirm')
-            }></TouchableOpacity>
+            onPress={() => this.props.navigation.navigate('QR 체크인')}>
+            <Text style={styles.qrtext}> QR 체크인</Text>
+          </TouchableOpacity>
         </Block>
 
         <Button
@@ -36,7 +36,9 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     //justifyContent: 'center',
   },
-
+  qrtext: {
+    color: '#ffffff',
+  },
   qrbtn: {
     backgroundColor: 'purple',
     justifyContent: 'center',

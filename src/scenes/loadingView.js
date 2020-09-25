@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 
 import {Block, theme} from 'galio-framework';
-import {Images, argonTheme} from '../constants';
-import {HeaderHeight} from '../constants/utils';
+//import {Images, argonTheme} from '../constants';
+//import {HeaderHeight} from '../constants/utils';
 import LinearGradient from 'react-native-linear-gradient';
 
 class test extends Component {

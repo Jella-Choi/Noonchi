@@ -31,8 +31,8 @@ function App() {
           options={screenDefaultOptions}
         />
         <Stack.Screen name="Crowd" component={crowdView} />
-        <Stack.Screen name="Confirm" component={confirmView} />
-        <Stack.Screen name="Msg" component={msgView} />
+        <Stack.Screen name="QR 체크인" component={confirmView} />
+        <Stack.Screen name="본인 인증" component={msgView} />
         <Stack.Screen name="QR" component={QRscanner} />
       </Stack.Navigator>
     </NavigationContainer>
