@@ -5,7 +5,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 
 class crowdView extends Component {
   state = {
-    percent: 17,
+    percent: 80,
   };
 
   render() {
@@ -14,7 +14,7 @@ class crowdView extends Component {
         <View style={styles.emoji}>
           <Image
             style={styles.tinyLogo}
-            source={require('../assets/images/Green_emoji.jpg')}
+            source={require('../assets/images/Red_emoji.jpg')}
           />
         </View>
         <Text style={styles.percent}> {this.state.percent} %</Text>
@@ -28,7 +28,7 @@ export default crowdView;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: 'red',
     opacity: 0.5,
     zIndex: 2,
     //alignItems: 'center',
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     marginTop: 380,
     marginLeft: 128,
 
-    color: '#137508',
+    color: '#91030a',
     fontSize: 68,
   },
 });

@@ -6,8 +6,6 @@ class QRscanner extends Component {
   render() {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Qrsanner</Text>
-
         <Button
           title="Go back home"
           onPress={() => this.props.navigation.navigate('Map')}

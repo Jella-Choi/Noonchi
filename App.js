@@ -30,7 +30,11 @@ function App() {
           component={mapView}
           options={screenDefaultOptions}
         />
-        <Stack.Screen name="Crowd" component={crowdView} />
+        <Stack.Screen
+          name="Crowd"
+          component={crowdView}
+          options={screenDefaultOptions}
+        />
         <Stack.Screen name="QR 체크인" component={confirmView} />
         <Stack.Screen name="본인 인증" component={msgView} />
         <Stack.Screen name="QR" component={QRscanner} />
