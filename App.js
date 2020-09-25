@@ -12,12 +12,24 @@ import QRscanner from './src/scenes/QRscanner';
 
 const Stack = createStackNavigator();
 
+const screenDefaultOptions = {
+  headerShown: false,
+};
+
 function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={loadingView} />
-        <Stack.Screen name="Map" component={mapView} />
+        <Stack.Screen
+          name="Home"
+          component={loadingView}
+          options={screenDefaultOptions}
+        />
+        <Stack.Screen
+          name="Map"
+          component={mapView}
+          options={screenDefaultOptions}
+        />
         <Stack.Screen name="Crowd" component={crowdView} />
         <Stack.Screen name="Confirm" component={confirmView} />
         <Stack.Screen name="Msg" component={msgView} />

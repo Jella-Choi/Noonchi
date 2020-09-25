@@ -1,15 +1,20 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {Component} from 'react';
 import {View, Text, Button} from 'react-native';
 
-function QRscanner({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Qrsanner</Text>
+class QRscanner extends Component {
+  render() {
+    return (
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text>Qrsanner</Text>
 
-      <Button title="Go back home" onPress={() => navigation.popToTop()} />
-    </View>
-  );
+        <Button
+          title="Go back home"
+          onPress={() => this.props.navigation.navigate('Map')}
+        />
+      </View>
+    );
+  }
 }
 
 export default QRscanner;

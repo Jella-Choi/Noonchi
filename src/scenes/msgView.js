@@ -1,9 +1,29 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import SendSMS from 'react-native-sms';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+
+class msgView extends Component {
+  render() {
+    return (
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text>msgView</Text>
+        <Button
+          title="go to QR scanner"
+          onPress={() => this.props.navigation.navigate('QR')}
+        />
+
+        <Button title="sendMSG" />
+      </View>
+    );
+  }
+}
+
+export default msgView;
+
+const styles = StyleSheet.create({});
 
 /*
 const msgView = ({navitation}) => {
@@ -43,20 +63,3 @@ const msgView = ({navitation}) => {
   );
 };
 */
-function msgView({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>msgView</Text>
-      <Button
-        title="go to QR scanner"
-        onPress={() => navigation.navigate('QR')}
-      />
-
-      <Button title="sendMSG" />
-    </View>
-  );
-}
-
-export default msgView;
-
-const styles = StyleSheet.create({});

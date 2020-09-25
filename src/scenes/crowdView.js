@@ -1,16 +1,27 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 
-const crowdView = ({navigation}) => {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>show Crowd</Text>
-      <Button title="go back home" onPress={() => navigation.popToTop()} />
-    </View>
-  );
-};
+class crowdView extends Component {
+  render() {
+    return (
+      <View style={styles.screen}>
+        <Text>show Crowd</Text>
+        <Button
+          title="go back home"
+          onPress={() => this.props.navigation.navigate('Map')}
+        />
+      </View>
+    );
+  }
+}
 
 export default crowdView;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    //alignItems: 'center',
+    //justifyContent: 'center',
+  },
+});
