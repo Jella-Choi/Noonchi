@@ -13,6 +13,26 @@ class msgView extends Component {
     setText: '',
   };
 
+  sendMsg = () => {
+    SendSMS.send(
+      {
+        body: '[본인확인] 인증번호는 333333입니다.',
+        recipients: ['01035855166'],
+        successTypes: ['sent', 'queued'],
+        allowAndroidSendWithoutReadPermission: true,
+      },
+      (completed, cancelled, error) => {
+        if (completed) {
+          console.log('SMS Sent Completed');
+        } else if (cancelled) {
+          console.log('SMS Sent Cancelled');
+        } else if (error) {
+          console.log('Some error occured');
+        }
+      },
+    );
+  };
+
   render() {
     return (
       <View style={styles.screen}>
@@ -34,6 +54,8 @@ class msgView extends Component {
         <View style={styles.item}>
           <TouchableOpacity
             style={styles.msgBtn}
+            onPress={this.sendMsg.bind(this)}
+
             //onPress={() => this.props.navigation.navigate('본인 인증')}>
           >
             <Text style={{fontSize: 16}}>인증 요청</Text>
@@ -111,6 +133,7 @@ const styles = StyleSheet.create({
 });
 
 /*
+
 const msgView = ({navitation}) => {
   const sendMsg = () => {
     console.log('msg');
