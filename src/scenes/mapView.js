@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {Component} from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, Button, StyleSheet, Image} from 'react-native';
 import {Block} from 'galio-framework';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
@@ -13,7 +13,10 @@ class mapView extends Component {
             activeOpacity={0.5}
             style={styles.qrbtn}
             onPress={() => this.props.navigation.navigate('QR 체크인')}>
-            <Text style={styles.qrtext}> QR 체크인</Text>
+            <Image
+              style={styles.qrimg}
+              source={require('../assets/images/qr-code-48.png')}
+            />
           </TouchableOpacity>
         </Block>
 
@@ -36,8 +39,10 @@ const styles = StyleSheet.create({
     //alignItems: 'center',
     //justifyContent: 'center',
   },
-  qrtext: {
-    color: '#ffffff',
+  qrimg: {
+    width: 40,
+    height: 40,
+    marginLeft: 17,
   },
   qrbtn: {
     backgroundColor: 'purple',
@@ -49,9 +54,9 @@ const styles = StyleSheet.create({
     borderRadius: 100,
 
     marginTop: 750,
-    marginLeft: 320,
-    width: 80,
-    height: 80,
+    marginLeft: 330,
+    width: 75,
+    height: 75,
     //alignItems: 'center',
     //justifyContent: 'flex-end',
   },

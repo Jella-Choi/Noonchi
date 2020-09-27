@@ -104,7 +104,9 @@ export default confirmView;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    marginTop: 60,
+    paddingTop: 60,
+    //marginTop: 60,
+    backgroundColor: 'white',
     //alignItems: 'center',
     //justifyContent: 'center',
   },
