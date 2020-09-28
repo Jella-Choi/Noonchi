@@ -87,7 +87,7 @@ export default msgView;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    paddingTop: 180,
+    paddingTop: 230,
     backgroundColor: 'white',
     //alignItems: 'center',
     //justifyContent: 'center',
