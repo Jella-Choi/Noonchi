@@ -134,6 +134,10 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        missingDimensionStrategy 'react-native-camera', 'general'
+        missingDimensionStrategy 'react-native-camera', 'mlkit'
+        multiDexEnabled true
     }
     splits {
         abi {
@@ -181,7 +185,11 @@ android {
 }
 
 dependencies {
+   
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    //classpath("com.android.tools.build:gradle:3.5.3")
+    implementation project(':react-native-permissions')
+    
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 

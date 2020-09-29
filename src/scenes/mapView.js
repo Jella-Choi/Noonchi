@@ -38,7 +38,7 @@ class mapView extends Component {
           </Marker>
         </MapView>
         {/* 
-        <TouchableOpacity
+        <TouchableOpacity4r
           activeOpacity={0.5}
           style={styles.qrbtn}
           onPress={() => this.props.navigation.navigate('QR 체크인')}>

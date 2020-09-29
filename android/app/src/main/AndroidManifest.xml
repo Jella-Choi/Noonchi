@@ -1,9 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.noonchi01">
 
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permissiona.INTERNET" />
     <uses-permission android:name="android.permission.READ_SMS" />
+
 
     <application
       android:name=".MainApplication"

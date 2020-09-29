@@ -1,10 +1,13 @@
 package com.noonchi01;
 
+import com.reactnativecommunity.rnpermissions.RNPermissionsPackage; // <- add the RNPermissionsPackage import
 import com.tkporter.sendsms.SendSMSPackage;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.reactnativecommunity.rnpermissions.RNPermissionsPackage;
+import org.reactnative.camera.RNCameraPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -28,6 +31,8 @@ public class MainApplication extends Application implements ReactApplication {
   }
   */
 
+  
+
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
         @Override
@@ -35,14 +40,17 @@ public class MainApplication extends Application implements ReactApplication {
           return BuildConfig.DEBUG;
         }
 
+
         @Override
         protected List<ReactPackage> getPackages() {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
-          // Packages that cannot be autolinked yet can be added manually here, for example:
-          // packages.add(new MyReactNativePackage());
+          //// Packages that cannot be autolinked yet can be added manually here, for example:
+          //// packages.add(new MyReactNativePackage());
+          //packages.add(new RNPermissionsPackage());
           return packages;
         }
+        
 
         @Override
         protected String getJSMainModuleName() {
