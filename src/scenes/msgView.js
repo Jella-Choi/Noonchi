@@ -34,6 +34,9 @@ class msgView extends Component {
   };
 
   render() {
+    const {person} = this.props.route.params;
+
+    //console.log(person);
     return (
       <View style={styles.screen}>
         <View style={styles.item}>
@@ -68,7 +71,9 @@ class msgView extends Component {
 
         <TouchableOpacity
           style={styles.qrBtn}
-          onPress={() => this.props.navigation.navigate('QR')}>
+          onPress={() =>
+            this.props.navigation.navigate('QR', {person: person})
+          }>
           <Text
             style={{
               color: 'white',

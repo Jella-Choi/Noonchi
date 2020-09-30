@@ -14,6 +14,9 @@ class confirmView extends Component {
   }
 
   render() {
+    const {person} = this.props.route.params;
+
+    //console.log(person);
     return (
       <View style={styles.screen}>
         <Text style={styles.guide_title}>집합시설 출입을 위한</Text>
@@ -85,7 +88,9 @@ class confirmView extends Component {
         </View>
         <TouchableOpacity
           style={styles.msgBtn}
-          onPress={() => this.props.navigation.navigate('본인 인증')}>
+          onPress={() =>
+            this.props.navigation.navigate('본인 인증', {person: person})
+          }>
           <Text
             style={{
               color: 'white',

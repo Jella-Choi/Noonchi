@@ -14,21 +14,10 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 
 class QRScanner extends Component {
-  state = {
-    person: 0,
-  };
-
   // constructor(props) {
   //   super(props);
   //   this.state = {person: 0};
   // }
-
-  updatePh = () => {
-    this.setState({
-      person: this.state.person + 1,
-    });
-    console.log(this.state.person);
-  };
 
   onSuccess = (e) => {
     Linking.openURL(e.data).catch((err) =>
@@ -37,21 +26,32 @@ class QRScanner extends Component {
   };
 
   render() {
+    const {person} = this.props.route.params;
+
     return (
       <QRCodeScanner
         onRead={this.onSuccess}
         //flashMode={RNCamera.Constants.FlashMode.torch}
         topContent={
-          <Text style={styles.centerText}>
-            {this.state.person} QR code를 인식하여 주십시오.
-          </Text>
+          <Text style={styles.centerText}>QR code를 인식하여 주십시오.</Text>
         }
         bottomContent={
           <TouchableOpacity
             style={styles.buttonTouchable}
             onPress={() => {
-              this.updatePh();
-              this.props.navigation.navigate('Crowd');
+              if (person + 1 > 120) {
+                this.props.navigation.navigate('CrowdRed', {
+                  person: person + 1,
+                });
+              } else if (person + 1 > 60) {
+                this.props.navigation.navigate('CrowdYellow', {
+                  person: person + 1,
+                });
+              } else {
+                this.props.navigation.navigate('CrowdGreen', {
+                  person: person + 1,
+                });
+              }
             }}>
             <Text style={styles.buttonText}>confirm</Text>
           </TouchableOpacity>
@@ -71,11 +71,15 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   buttonText: {
-    fontSize: 21,
-    color: 'rgb(0,122,255)',
+    fontSize: 18,
+    color: '#ffffff',
   },
   buttonTouchable: {
-    padding: 16,
+    marginTop: 10,
+    padding: 18,
+    //padding: 16,
+    backgroundColor: 'purple',
+    borderRadius: 10,
   },
 });
 

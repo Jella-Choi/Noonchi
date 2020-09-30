@@ -12,7 +12,7 @@ class mapView extends Component {
     super();
   }
   state = {
-    person: 110,
+    person: 60,
   };
 
   sendPerson = () => {
@@ -76,7 +76,11 @@ class mapView extends Component {
         <Button
           color="purple"
           title="QR 체크인"
-          onPress={() => this.props.navigation.navigate('QR 체크인')}
+          onPress={() =>
+            this.props.navigation.navigate('QR 체크인', {
+              person: this.state.person,
+            })
+          }
         />
       </View>
     );

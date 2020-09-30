@@ -14,8 +14,10 @@ class crowdRed extends Component {
             source={require('../assets/images/Red_emoji.jpg')}
           />
         </View>
-        <Text>{((Number(person) / 200) * 100).toFixed(0)} % </Text>
-        <Text style={styles.percent}> {person} / 200 명</Text>
+        <Text style={styles.percent}>
+          {((Number(person) / 200) * 100).toFixed(0)} %{' '}
+        </Text>
+        <Text style={styles.person}> {person} / 200 명</Text>
       </View>
     );
   }
@@ -43,10 +45,17 @@ const styles = StyleSheet.create({
     //width: 100,
   },
   percent: {
-    marginTop: 380,
-    marginLeft: 128,
+    marginTop: 370,
+    marginLeft: 160,
 
-    color: '#91030a',
-    fontSize: 68,
+    color: '#798219',
+    fontSize: 60,
+  },
+  person: {
+    marginTop: 40,
+    marginLeft: 160,
+
+    color: '#798219',
+    fontSize: 20,
   },
 });
