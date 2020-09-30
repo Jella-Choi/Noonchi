@@ -14,6 +14,22 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 
 class QRScanner extends Component {
+  state = {
+    person: 0,
+  };
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {person: 0};
+  // }
+
+  updatePh = () => {
+    this.setState({
+      person: this.state.person + 1,
+    });
+    console.log(this.state.person);
+  };
+
   onSuccess = (e) => {
     Linking.openURL(e.data).catch((err) =>
       console.error('An error occured', err),
@@ -26,12 +42,17 @@ class QRScanner extends Component {
         onRead={this.onSuccess}
         //flashMode={RNCamera.Constants.FlashMode.torch}
         topContent={
-          <Text style={styles.centerText}>QR code를 인식하여 주십시오.</Text>
+          <Text style={styles.centerText}>
+            {this.state.person} QR code를 인식하여 주십시오.
+          </Text>
         }
         bottomContent={
           <TouchableOpacity
             style={styles.buttonTouchable}
-            onPress={() => this.props.navigation.navigate('Crowd')}>
+            onPress={() => {
+              this.updatePh();
+              this.props.navigation.navigate('Crowd');
+            }}>
             <Text style={styles.buttonText}>confirm</Text>
           </TouchableOpacity>
         }

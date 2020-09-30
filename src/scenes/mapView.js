@@ -8,10 +8,17 @@ import MapView, {Marker} from 'react-native-maps';
 class mapView extends Component {
   static navigationOptions = {header: null};
 
-  constructor(props) {
-    super(props);
-    this.state = {ph: 100}; //사람이 많을 경우
+  constructor() {
+    super();
   }
+  state = {
+    person: 26,
+  };
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {ph: 100}; //사람이 많을 경우
+  // }
 
   render() {
     return (
@@ -30,7 +37,11 @@ class mapView extends Component {
             coordinate={{latitude: 37.450227, longitude: 126.653491}}
             title="인하대학교 용현캠퍼스"
             description="아래 버튼을 눌러 상세보기로 넘어가기"
-            onPress={() => this.props.navigation.navigate('Crowd')}>
+            onPress={() =>
+              this.props.navigation.navigate('Crowd', {
+                person: this.state.person,
+              })
+            }>
             {/* <Image
               source={require('../assets/images/logo.png')}
               style={{height: 45, width: 45}}

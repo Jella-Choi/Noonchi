@@ -33,7 +33,7 @@ function App() {
         <Stack.Screen
           name="Crowd"
           component={crowdView}
-          options={screenDefaultOptions}
+          //options={screenDefaultOptions}
         />
         <Stack.Screen name="QR 체크인" component={confirmView} />
         <Stack.Screen name="본인 인증" component={msgView} />
