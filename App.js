@@ -9,6 +9,9 @@ import crowdView from './src/scenes/crowdView';
 import confirmView from './src/scenes/confirmView';
 import msgView from './src/scenes/msgView';
 import QRscanner from './src/scenes/QRscanner';
+import crowdRed from './src/scenes/crowdRed';
+import crowdYellow from './src/scenes/crowdYellow';
+import crowdGreen from './src/scenes/crowdGreen';
 
 const Stack = createStackNavigator();
 
@@ -30,9 +33,27 @@ function App() {
           component={mapView}
           options={screenDefaultOptions}
         />
-        <Stack.Screen
+
+        {/*<Stack.Screen
           name="Crowd"
           component={crowdView}
+          //options={screenDefaultOptions}
+        />
+        */}
+        <Stack.Screen
+          name="CrowdRed"
+          component={crowdRed}
+          //options={screenDefaultOptions}
+        />
+
+        <Stack.Screen
+          name="CrowdYellow"
+          component={crowdYellow}
+          //options={screenDefaultOptions}
+        />
+        <Stack.Screen
+          name="CrowdGreen"
+          component={crowdGreen}
           //options={screenDefaultOptions}
         />
         <Stack.Screen name="QR 체크인" component={confirmView} />

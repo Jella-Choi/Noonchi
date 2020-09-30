@@ -12,7 +12,23 @@ class mapView extends Component {
     super();
   }
   state = {
-    person: 26,
+    person: 110,
+  };
+
+  sendPerson = () => {
+    if (this.state.person > 120) {
+      this.props.navigation.navigate('CrowdRed', {
+        person: this.state.person,
+      });
+    } else if (this.state.person > 60) {
+      this.props.navigation.navigate('CrowdYellow', {
+        person: this.state.person,
+      });
+    } else {
+      this.props.navigation.navigate('CrowdGreen', {
+        person: this.state.person,
+      });
+    }
   };
 
   // constructor(props) {
@@ -37,11 +53,7 @@ class mapView extends Component {
             coordinate={{latitude: 37.450227, longitude: 126.653491}}
             title="인하대학교 용현캠퍼스"
             description="아래 버튼을 눌러 상세보기로 넘어가기"
-            onPress={() =>
-              this.props.navigation.navigate('Crowd', {
-                person: this.state.person,
-              })
-            }>
+            onPress={this.sendPerson.bind(this)}>
             {/* <Image
               source={require('../assets/images/logo.png')}
               style={{height: 45, width: 45}}

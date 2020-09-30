@@ -3,12 +3,9 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-class crowdView extends Component {
-  state = {
-    percent: 80,
-  };
-
+class crowdRed extends Component {
   render() {
+    const {person} = this.props.route.params;
     return (
       <View style={styles.screen}>
         <View style={styles.emoji}>
@@ -17,13 +14,14 @@ class crowdView extends Component {
             source={require('../assets/images/Red_emoji.jpg')}
           />
         </View>
-        <Text style={styles.percent}> {this.state.percent} %</Text>
+        <Text>{((Number(person) / 200) * 100).toFixed(0)} % </Text>
+        <Text style={styles.percent}> {person} / 200 명</Text>
       </View>
     );
   }
 }
 
-export default crowdView;
+export default crowdRed;
 
 const styles = StyleSheet.create({
   screen: {
