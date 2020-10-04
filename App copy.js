@@ -12,9 +12,6 @@ import QRscanner from './src/scenes/QRscanner';
 import crowdRed from './src/scenes/crowdRed';
 import crowdYellow from './src/scenes/crowdYellow';
 import crowdGreen from './src/scenes/crowdGreen';
-import close from './src/scenes/close';
-import RED from './src/scenes/RED';
-import YELLOW from './src/scenes/YELLOW';
 
 const Stack = createStackNavigator();
 
@@ -43,22 +40,6 @@ function App() {
           //options={screenDefaultOptions}
         />
         */}
-
-        <Stack.Screen
-          name="close"
-          component={close}
-          //options={screenDefaultOptions}
-        />
-        <Stack.Screen
-          name="RED"
-          component={RED}
-          //options={screenDefaultOptions}
-        />
-        <Stack.Screen
-          name="YELLOW"
-          component={YELLOW}
-          //options={screenDefaultOptions}
-        />
         <Stack.Screen
           name="CrowdRed"
           component={crowdRed}

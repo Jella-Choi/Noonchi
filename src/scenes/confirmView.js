@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {Component, useState} from 'react';
-import {StyleSheet, View, Text, Button, CheckBox} from 'react-native';
+import {StyleSheet, View, Text, Button, CheckBox, setText} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 //import {CheckBox} from 'react-native-elements';
 

@@ -16,7 +16,7 @@ class msgView extends Component {
   sendMsg = () => {
     SendSMS.send(
       {
-        body: '[본인확인] 인증번호는 333333입니다.',
+        body: '[본인확인] 인증번호는 763840입니다.',
         recipients: ['01035855166'],
         successTypes: ['sent', 'queued'],
         allowAndroidSendWithoutReadPermission: true,
@@ -51,7 +51,8 @@ class msgView extends Component {
           <TextInput
             style={styles.value}
             placeholder="-없이  숫자만  입력"
-            onChangeText={(phone) => setText(phone)}></TextInput>
+            //onChangeText={(phone) => setText(phone)}
+          ></TextInput>
         </View>
 
         <View style={styles.item}>

@@ -59,6 +59,36 @@ class mapView extends Component {
               style={{height: 45, width: 45}}
             /> */}
           </Marker>
+          <Marker
+            coordinate={{latitude: 37.447137, longitude: 126.650854}}
+            title="홈플러스"
+            description="아래 버튼을 눌러 상세보기로 넘어가기"
+            onPress={() => this.props.navigation.navigate('close')}>
+            {/* <Image
+              source={require('../assets/images/logo.png')}
+              style={{height: 45, width: 45}}
+            /> */}
+          </Marker>
+          <Marker
+            coordinate={{latitude: 37.451277, longitude: 126.657957}}
+            title="소블링카페"
+            description="아래 버튼을 눌러 상세보기로 넘어가기"
+            onPress={() => this.props.navigation.navigate('RED')}>
+            {/* <Image
+              source={require('../assets/images/logo.png')}
+              style={{height: 45, width: 45}}
+            /> */}
+          </Marker>
+          <Marker
+            coordinate={{latitude: 37.447776, longitude: 126.659533}}
+            title="인하대학교 2생활관"
+            description="아래 버튼을 눌러 상세보기로 넘어가기"
+            onPress={() => this.props.navigation.navigate('YELLOW')}>
+            {/* <Image
+              source={require('../assets/images/logo.png')}
+              style={{height: 45, width: 45}}
+            /> */}
+          </Marker>
         </MapView>
         {/* 
         <TouchableOpacity4r
